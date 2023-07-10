@@ -4,14 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 // Главное активити, к которому будут привязаны наши фрагменты.
-class MainActivity : AppCompatActivity(),
+class MainActivity : AppCompatActivity(R.layout.activity_main),
     SongNameProvider {
 
-    override fun getSongName(): String = "Muse - Starlight"
+    override fun getSongName(): String = "Jungle - Casio"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
             /**

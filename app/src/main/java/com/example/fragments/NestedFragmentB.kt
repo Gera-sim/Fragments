@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.commit
+import com.example.SelectPage
 import com.example.fragments.databinding.FragmentBNestedBinding
 
-// Второй вложенный фрагмент
+// Второй фрагмент для ViewPager
 class NestedFragmentB : BindingFragment<FragmentBNestedBinding>() {
 
     override fun createBinding(
@@ -29,9 +29,7 @@ class NestedFragmentB : BindingFragment<FragmentBNestedBinding>() {
          * другой
          */
         binding.button.setOnClickListener {
-            parentFragmentManager.commit {
-                replace(R.id.fragment_child_container, NestedFragmentA())
-            }
+            (parentFragment as? SelectPage)?.navigateTo(page = 0)
         }
     }
 }
